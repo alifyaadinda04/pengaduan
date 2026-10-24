@@ -84,7 +84,7 @@ class ReportController extends Controller
         ]);
 
         $user = $request->only('email', 'password');
-        if(Auth::attempt($user)){
+        if(Auth::attempt($user)){//mengecek di database apakah data nya ada atau tidak
             if (Auth::user()->role== 'admin'){
             return redirect()->route('data');
             }elseif (Auth::user()->role == 'petugas'){
@@ -118,7 +118,7 @@ class ReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)//$request buat 
     {
         $request -> validate([
             'nik' => 'required',
@@ -128,8 +128,8 @@ class ReportController extends Controller
             'foto'=>'required|image|mimes:jpg,jpeg,png,svg',
         ]);
 
-        $image = $request->file('foto');
-        $imgName = rand() . '.' . $image->extension();
+        $image = $request->file('foto');//$request file diambil dari tipe file, di ambil foto
+        $imgName = rand() . '.' . $image->extension();//kotket (menghubungkan data ke string)(memasukan data ke png)
         $path =public_path('assets/image/');
         $image->move($path,$imgName);
 

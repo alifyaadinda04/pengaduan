@@ -44,7 +44,7 @@
         </td>
         <td>
             {{--cek apakah data report ini sudah memiliki relasi dngan dta with(response)--}}
-            @if ($report['response'])
+            @if ($report['response']){{--karena --}}
             {{$report['response']['pesan']}}
                 {{--kalau ada hasil relasinya, tampilkan dibagian pesan--}}
             @else

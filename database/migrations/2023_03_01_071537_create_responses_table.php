@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('report_id');
+            $table->bigInteger('report_id');//karena primary key pake bigint
             $table->enum('status',['ditolak', 'diterima','proses']);
             $table->text('pesan');
             $table->timestamps();

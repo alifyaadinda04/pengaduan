@@ -16,7 +16,7 @@
 </div>
 <div style="display: flex; justify-content: flex-end; align-item: center;"> 
     <form action="" method="GET">
-        @csrf {{--pake get krna route buat masuk ke hlman ini pake get--}}
+        @csrf {{--pake get krna route buat masuk ke hlman ini pake get--}}{{--ngirim data ke $request--}}
         <input type="text" name="search" placeholder="Cari berdasarkan nama...">
         <button type="submit" class="btn-login" style="margin-top: -2px">Cari</button>
     </form>

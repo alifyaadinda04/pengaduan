@@ -14,6 +14,7 @@ Route::get('/login', function() {
 
 Route::post('/store',[ReportController::class, 'store'])->name('store');
 Route::post('/auth', [ReportController::class, 'auth'])->name('auth');
+//buat nandain akses ke petugas (:) parameter ke stip operator
 Route::middleware(['IsLogin', 'CekRole:petugas'])->group(function(){
     Route::get('/data/petugas', [ReportController::class, 'dataPetugas'])->name('data.petugas');
     //menampilkan from tambah atau ubah respon

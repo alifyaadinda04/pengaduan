@@ -210,7 +210,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'PDF' => Barryvdh\DomPDF\Facade::class, 
+        'PDF' => Barryvdh\DomPDF\Facades::class, 
     ])->toArray(),
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
